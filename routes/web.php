@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\LojaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,7 @@ Route::get('/', function () {
 Route::get('/ola', function () {
     echo "Olá mundo!";
 });
+
+Route::get('/produtos',[ProdutoController::class,'index']);
+
+Route::get('/lojas',[LojaController::class,'index']);
