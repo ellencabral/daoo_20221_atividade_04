@@ -15,4 +15,11 @@ class LojaController extends Controller
             'lojas' => Loja::all()
         ]);
     }
+    
+    public function show($id)
+    {
+        return view('loja_show', [
+            'loja' => Loja::find($id)
+        ]);
+    }
 }

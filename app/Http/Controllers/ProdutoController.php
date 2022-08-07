@@ -15,4 +15,11 @@ class ProdutoController extends Controller
             'produtos' => Produto::all()
         ]);
     }
+
+    public function show($id)
+    {
+        return view('produto_show', [
+            'produto' => Produto::find($id)
+        ]);
+    }
 }

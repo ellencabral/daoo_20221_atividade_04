@@ -14,16 +14,14 @@
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Descrição</th>
                 <th>Classificação</th>
             </tr>
         </thead>
         <tbody>
             @foreach($lojas as $loja)
             <tr>
-                <td>{{$loja->id}}</td>
+                <td><a href="/loja/{{ $loja->id }}">{{$loja->id}}</a></td>
                 <td>{{$loja->nome}}</td>
-                <td>{{$loja->descricao}}</td>
                 <td>{{$loja->classificacao}}</td>
             </tr>
             @endforeach

@@ -12,18 +12,15 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Nome</th>
-                <th>Descrição</th>
                 <th>Preço</th>
             </tr>
         </thead>
         <tbody>
             @foreach($produtos as $produto)
             <tr>
-                <td>{{$produto->id}}</td>
+                <td><a href="/produto/{{ $produto->id }}">{{$produto->id}}</a></td>
                 <td>{{$produto->nome}}</td>
-                <td>{{$produto->descricao}}</td>
                 <td>{{$produto->preco}}</td>
             </tr>
             @endforeach

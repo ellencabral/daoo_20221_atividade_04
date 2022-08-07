@@ -26,3 +26,7 @@ Route::get('/ola', function () {
 Route::get('/produtos',[ProdutoController::class,'index']);
 
 Route::get('/lojas',[LojaController::class,'index']);
+
+Route::get('/produto/{id}',[ProdutoController::class,'show']);
+
+Route::get('/loja/{id}',[LojaController::class,'show']);
