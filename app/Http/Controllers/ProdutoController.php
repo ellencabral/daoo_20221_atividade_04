@@ -22,4 +22,19 @@ class ProdutoController extends Controller
             'produto' => Produto::find($id)
         ]);
     }
+
+    public function create()
+    {
+        return view('produto_create');
+    }
+
+    public function insert(Request $request)
+    {  
+        try {
+            Produto::create($request->all());
+            return redirect('produtos');
+        } catch (Exception $error) {
+            return view('produto_create',['msg' => 'Erro ao inserir produto!']);
+        }
+    }    
 }

@@ -12,8 +12,10 @@
     <table>
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Nome</th>
                 <th>Preço</th>
+                <th>Editar</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +24,7 @@
                 <td><a href="/produto/{{ $produto->id }}">{{$produto->id}}</a></td>
                 <td>{{$produto->nome}}</td>
                 <td>{{$produto->preco}}</td>
+                <td><a href="">✎</a></td>
             </tr>
             @endforeach
         </tbody>
@@ -29,5 +32,8 @@
     @else
     <p>Produtos não encontrados!</p>
     @endif
+    
+    <br/>
+    <a href="/produto_create/{{ $produto->id }}">+ Inserir Produto</a>
 </body>
 </html>

@@ -31,3 +31,7 @@ Route::get('/lojas',[LojaController::class,'index']);
 Route::get('/produto/{id}',[ProdutoController::class,'show']);
 
 Route::get('/loja/{id}',[LojaController::class,'show']);
+
+Route::get('/produto_create/{id}',[ProdutoController::class,'create']);
+
+Route::post('/produto',[ProdutoController::class,'insert']);
