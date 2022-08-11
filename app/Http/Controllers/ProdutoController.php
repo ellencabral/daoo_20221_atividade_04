@@ -50,4 +50,17 @@ class ProdutoController extends Controller
             dd('Erro ao atualizar o produto $id !');
         return redirect('/produtos');
     }
+
+    public function remove($id)
+    {
+        return view('produto_remove', ['produto' => Produto::find($id)]);
+    }
+
+    public function delete(Request $request, $id)
+    {
+        if($request->confirmar==="Deletar")
+            if(!Produto::destroy($id))
+                dd("Erro ao deletar o produto $id !");
+        return redirect('/produtos');
+    }
 }

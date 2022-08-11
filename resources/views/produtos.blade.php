@@ -24,7 +24,8 @@
                 <td><a href="/produto/{{ $produto->id }}">{{$produto->id}}</a></td>
                 <td>{{$produto->nome}}</td>
                 <td>{{$produto->preco}}</td>
-                <td><a href="{{ route('edit', $produto->id) }}">✎</a></td>
+                <td><a href="{{ route('edit', $produto->id) }}">✏️</a></td>                
+                <td><a href="{{ route('remove', $produto->id) }}">🗑️</a></td>
             </tr>
             @endforeach
         </tbody>
