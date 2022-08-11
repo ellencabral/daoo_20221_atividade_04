@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('lojas', function (Blueprint $table) {
+        Schema::create('encomendas', function (Blueprint $table) {
             $table->id();
-            $table->text('nome');
             $table->text('descricao');
-            $table->float('classificacao');
+            $table->float('total');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::drop('lojas');
+        Schema::drop('encomendas');
     }
 };
