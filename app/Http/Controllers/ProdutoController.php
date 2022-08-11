@@ -36,5 +36,18 @@ class ProdutoController extends Controller
         } catch (Exception $error) {
             return view('produto_create',['msg' => 'Erro ao inserir produto!']);
         }
-    }    
+    }
+    
+    public function edit($id)
+    {
+        $data = ['produto' => Produto::find($id)];
+        return view('produto_edit', $data);
+    }
+
+    public function update(Request $request, $id)
+    {        
+        if(!Produto::find($id)->update($request->all()))
+            dd('Erro ao atualizar o produto $id !');
+        return redirect('/produtos');
+    }
 }

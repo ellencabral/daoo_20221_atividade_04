@@ -32,6 +32,10 @@ Route::get('/produto/{id}',[ProdutoController::class,'show']);
 
 Route::get('/loja/{id}',[LojaController::class,'show']);
 
-Route::get('/produto_create/{id}',[ProdutoController::class,'create']);
+Route::get('/produto_create',[ProdutoController::class,'create']);
 
 Route::post('/produto',[ProdutoController::class,'insert']);
+
+Route::get('/produto/{id}/edit',[ProdutoController::class,'edit'])->name('edit');
+
+Route::post('/produto/{id}/update',[ProdutoController::class,'update'])->name('update');

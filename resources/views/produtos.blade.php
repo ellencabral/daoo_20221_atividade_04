@@ -24,7 +24,7 @@
                 <td><a href="/produto/{{ $produto->id }}">{{$produto->id}}</a></td>
                 <td>{{$produto->nome}}</td>
                 <td>{{$produto->preco}}</td>
-                <td><a href="">✎</a></td>
+                <td><a href="{{ route('edit', $produto->id) }}">✎</a></td>
             </tr>
             @endforeach
         </tbody>
@@ -34,6 +34,6 @@
     @endif
     
     <br/>
-    <a href="/produto_create/{{ $produto->id }}">+ Inserir Produto</a>
+    <a href="/produto_create">+ Inserir Produto</a>
 </body>
 </html>

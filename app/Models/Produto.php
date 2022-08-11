@@ -12,8 +12,6 @@ class Produto extends Model
     protected $fillable = [ /* precisa existir o fillable para que o fill() e o create() funcionem*/
         'nome',
         'descricao',
-        'qtd_estoque',
         'preco',
-        'importado'
     ];
 }
