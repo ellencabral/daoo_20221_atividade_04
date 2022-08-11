@@ -24,13 +24,11 @@ Route::get('/ola', function () {
     echo "Olá mundo!";
 });
 
+/* PRODUTOS */
+
 Route::get('/produtos',[ProdutoController::class,'index']);
 
-Route::get('/lojas',[LojaController::class,'index']);
-
 Route::get('/produto/{id}',[ProdutoController::class,'show']);
-
-Route::get('/loja/{id}',[LojaController::class,'show']);
 
 Route::get('/produto_create',[ProdutoController::class,'create']);
 
@@ -43,3 +41,21 @@ Route::post('/produto/{id}/update',[ProdutoController::class,'update'])->name('u
 Route::get('/produto/{id}/remove', [ProdutoController::class, 'remove'])->name('remove');
 
 Route::post('/produto/{id}/delete', [ProdutoController::class, 'delete'])->name('delete');
+
+/* LOJAS */
+
+Route::get('/lojas',[LojaController::class,'index']);
+
+Route::get('/loja/{id}',[LojaController::class,'show']);
+
+Route::get('/loja_create',[LojaController::class,'create']);
+
+Route::post('/loja',[LojaController::class,'insert']);
+
+Route::get('/loja/{id}/edit',[LojaController::class,'edit'])->name('edit');
+ 
+Route::post('/loja/{id}/update',[LojaController::class,'update'])->name('update');
+
+Route::get('/loja/{id}/remove', [LojaController::class, 'remove'])->name('remove');
+
+Route::post('/loja/{id}/delete', [LojaController::class, 'delete'])->name('delete');

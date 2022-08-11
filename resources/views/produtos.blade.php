@@ -16,6 +16,7 @@
                 <th>Nome</th>
                 <th>Preço</th>
                 <th>Editar</th>
+                <th>Remover</th>
             </tr>
         </thead>
         <tbody>

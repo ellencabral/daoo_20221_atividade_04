@@ -15,6 +15,8 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Classificação</th>
+                <th>Editar</th>
+                <th>Remover</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +25,8 @@
                 <td><a href="/loja/{{ $loja->id }}">{{$loja->id}}</a></td>
                 <td>{{$loja->nome}}</td>
                 <td>{{$loja->classificacao}}</td>
+                <td><a href="{{ route('edit', $loja->id) }}">✏️</a></td>                
+                <td><a href="{{ route('remove', $loja->id) }}">🗑️</a></td>
             </tr>
             @endforeach
         </tbody>
@@ -30,5 +34,8 @@
     @else
     <p>Lojas não encontradas!</p>
     @endif
+    
+    <br/>
+    <a href="/loja_create">+ Criar Loja</a>
 </body>
 </html>
