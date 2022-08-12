@@ -59,3 +59,21 @@ Route::post('/loja/{id}/update',[LojaController::class,'update'])->name('update'
 Route::get('/loja/{id}/remove', [LojaController::class, 'remove'])->name('remove');
 
 Route::post('/loja/{id}/delete', [LojaController::class, 'delete'])->name('delete');
+
+/* ENCOMENDAS */
+
+Route::get('/encomendas',[EncomendaController::class,'index']);
+
+Route::get('/encomenda/{id}',[EncomendaController::class,'show']);
+
+Route::get('/encomenda_create',[EncomendaController::class,'create']);
+
+Route::post('/encomenda',[EncomendaController::class,'insert']);
+
+Route::get('/encomenda/{id}/edit',[EncomendaController::class,'edit'])->name('edit');
+ 
+Route::post('/encomenda/{id}/update',[EncomendaController::class,'update'])->name('update');
+
+Route::get('/encomenda/{id}/remove', [EncomendaController::class, 'remove'])->name('remove');
+
+Route::post('/encomenda/{id}/delete', [EncomendaController::class, 'delete'])->name('delete');
