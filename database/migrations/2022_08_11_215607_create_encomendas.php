@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('encomendas', function (Blueprint $table) {
             $table->id();
             $table->text('descricao');
-            $table->float('total');
-            $table->boolean('status');
+            $table->float('total')->default(0);
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

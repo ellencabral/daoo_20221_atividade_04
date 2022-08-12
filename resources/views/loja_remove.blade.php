@@ -11,7 +11,7 @@
     @if ($loja)
         <h1>{{ $loja->nome }}</h1>
         <ul>
-            <li>Preço: {{ $loja->descricao }}</li>
+            <li>Descrição: {{ $loja->descricao }}</li>
         </ul>
         <form action="{{ route('delete',$loja->id) }}" method="post">
             @csrf
@@ -27,8 +27,8 @@
             </table>
         </form>
     @else
-        <p>Produto não encontrado! </p>
-        <a href="/produtos">&#9664;Voltar</a>
+        <p>Loja não encontrada! </p>
+        <a href="/lojas">&#9664;Voltar</a>
     @endif
 </body>
 </html>
