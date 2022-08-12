@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Ago-2022 às 04:02
+-- Tempo de geração: 12-Ago-2022 às 03:05
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -24,10 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `encomendas`
+--
+
+CREATE TABLE `encomendas` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `descricao` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total` double(8,2) NOT NULL DEFAULT 0.00,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `encomendas`
+--
+
+INSERT INTO `encomendas` (`id`, `descricao`, `total`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Queria uma encomenda assim', 0.00, 0, '2022-08-12 03:36:49', '2022-08-12 03:51:20'),
+(2, 'Tal coisa', 0.00, 1, '2022-08-12 03:40:40', '2022-08-12 03:51:16');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `failed_jobs`
 --
 
-DROP TABLE IF EXISTS `failed_jobs`;
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -44,7 +66,6 @@ CREATE TABLE `failed_jobs` (
 -- Estrutura da tabela `lojas`
 --
 
-DROP TABLE IF EXISTS `lojas`;
 CREATE TABLE `lojas` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `nome` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -71,7 +92,6 @@ INSERT INTO `lojas` (`id`, `nome`, `descricao`, `classificacao`, `created_at`, `
 -- Estrutura da tabela `migrations`
 --
 
-DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -96,7 +116,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- Estrutura da tabela `password_resets`
 --
 
-DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -109,7 +128,6 @@ CREATE TABLE `password_resets` (
 -- Estrutura da tabela `personal_access_tokens`
 --
 
-DROP TABLE IF EXISTS `personal_access_tokens`;
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -129,7 +147,6 @@ CREATE TABLE `personal_access_tokens` (
 -- Estrutura da tabela `produtos`
 --
 
-DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE `produtos` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `nome` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -157,7 +174,6 @@ INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `created_at`, `updat
 -- Estrutura da tabela `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -172,6 +188,12 @@ CREATE TABLE `users` (
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices para tabela `encomendas`
+--
+ALTER TABLE `encomendas`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `failed_jobs`
@@ -222,6 +244,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `encomendas`
+--
+ALTER TABLE `encomendas`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `failed_jobs`
