@@ -13,7 +13,7 @@
         <ul>
             <li>Descrição: {{ $loja->descricao }}</li>
         </ul>
-        <form action="{{ route('delete',$loja->id) }}" method="post">
+        <form action="{{ route('delete_loja',$loja->id) }}" method="post">
             @csrf
             <h4 style="color:red;font-weight:bold">Confirmar a exclusão desta loja?</h4>
             <table>

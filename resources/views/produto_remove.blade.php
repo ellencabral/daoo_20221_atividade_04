@@ -14,7 +14,7 @@
         <ul>
             <li>Preço: {{ $produto->preco }}</li>
         </ul>
-        <form action="{{ route('delete',$produto->id) }}" method="post">
+        <form action="{{ route('delete_produto',$produto->id) }}" method="post">
             @csrf
             <h4 style="color:red;font-weight:bold">Confirmar a exclusão deste item?</h4>
             <table>

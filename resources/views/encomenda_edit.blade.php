@@ -10,7 +10,7 @@
 
 <body>
     <h1>Editar Encomenda</h1>
-    <form action="{{ route('update', $encomenda->id) }}" method="POST">
+    <form action="{{ route('update_encomenda', $encomenda->id) }}" method="POST">
         @csrf
         <table>
             <tr>

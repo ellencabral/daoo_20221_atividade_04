@@ -25,8 +25,8 @@
                 <td><a href="/loja/{{ $loja->id }}">{{$loja->id}}</a></td>
                 <td>{{$loja->nome}}</td>
                 <td>{{$loja->classificacao}}</td>
-                <td><a href="{{ route('edit', $loja->id) }}">✏️</a></td>                
-                <td><a href="{{ route('remove', $loja->id) }}">🗑️</a></td>
+                <td><a href="{{ route('edit_loja', $loja->id) }}">✏️</a></td>                
+                <td><a href="{{ route('remove_loja', $loja->id) }}">🗑️</a></td>
             </tr>
             @endforeach
         </tbody>
@@ -36,6 +36,6 @@
     @endif
     
     <br/>
-    <a href="/loja_create">+ Criar Loja</a>
+    <a href="/loja">+ Criar Loja</a>
 </body>
 </html>

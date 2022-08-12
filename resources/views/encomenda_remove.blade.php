@@ -13,7 +13,7 @@
         <ul>
             <li>Descrição: {{ $encomenda->descricao }}</li>
         </ul>
-        <form action="{{ route('delete',$encomenda->id) }}" method="post">
+        <form action="{{ route('delete_encomenda',$encomenda->id) }}" method="post">
             @csrf
             <h4 style="color:red;font-weight:bold">Confirmar a exclusão desta encomenda?</h4>
             <table>

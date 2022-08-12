@@ -25,8 +25,8 @@
                 <td><a href="/encomenda/{{ $encomenda->id }}">{{$encomenda->id}}</a></td>
                 <td>{{$encomenda->descricao}}</td>
                 <td>{{($encomenda->status)?'Finalizada':'Em andamento'}}</td>
-                <td><a href="{{ route('edit', $encomenda->id) }}">✏️</a></td>                
-                <td><a href="{{ route('remove', $encomenda->id) }}">🗑️</a></td>
+                <td><a href="{{ route('edit_encomenda', $encomenda->id) }}">✏️</a></td>                
+                <td><a href="{{ route('remove_encomenda', $encomenda->id) }}">🗑️</a></td>
             </tr>
             @endforeach
         </tbody>
@@ -36,6 +36,6 @@
     @endif
     
     <br/>
-    <a href="/encomenda_create">+ Fazer Encomenda</a>
+    <a href="/encomenda">+ Fazer Encomenda</a>
 </body>
 </html>
