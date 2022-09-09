@@ -1,8 +1,4 @@
 <x-layouts.app>
-    <h1>Produtos</h1>
-    @if ($produtos->count()>0)
-        <x-table.products :products="$produtos"/>
-    @else
-    <p>Produtos não encontrados!</p>
-    @endif
+    <h1 class="text-4xl">Produtos</h1>
+    <livewire:products>
 </x-layouts.app>

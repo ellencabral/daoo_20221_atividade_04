@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/produto/{id}',[ProdutoController::class,'show'])->name('show_produto');
 
-    Route::get('/produto',[ProdutoController::class,'create']);
+    Route::get('/produto',[ProdutoController::class,'create'])->name('create_produto');
 
     Route::post('/produto',[ProdutoController::class,'insert']);
 
