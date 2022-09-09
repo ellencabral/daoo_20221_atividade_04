@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('loja_id')
+                  ->constrained()
+                  ->cascadeOnDelete();
             $table->text('nome');
             $table->text('descricao');
             $table->float('preco');

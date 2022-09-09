@@ -13,5 +13,11 @@ class Produto extends Model
         'nome',
         'descricao',
         'preco',
+        'loja_id'
     ];
+
+    public function lojas()
+    {
+        return $this->belongsTo(Loja::class); //vários produtos podem pertencer à uma loja
+    }
 }
