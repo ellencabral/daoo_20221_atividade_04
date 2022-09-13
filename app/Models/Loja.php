@@ -11,7 +11,8 @@ class Loja extends Model
 
     protected $fillable = [
         'nome',
-        'descricao'
+        'descricao',
+        'classificacao'
     ];
 
     public function produtos()
