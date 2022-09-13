@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProdutoController;
 use App\Http\Controllers\Api\LojaController;
 
-Route::get('/produto',[ProdutoController::class,'index']);
-Route::get('/produto/{id}',[ProdutoController::class,'show']);
+Route::get('/produtos',[ProdutoController::class,'index']);
+Route::get('/produtos/{id}',[ProdutoController::class,'show']);
 Route::post('/produtos',[ProdutoController::class,'store']);
 Route::put('/produtos/{id}',[ProdutoController::class,'update']);
 Route::delete('/produtos/{id}',[ProdutoController::class,'remove']);
