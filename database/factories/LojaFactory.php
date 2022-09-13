@@ -20,8 +20,8 @@ class LojaFactory extends Factory
     {
         return [
             'nome' => $this->faker->word(),
-            'descricao' => $this->faker->sentence(3),
-            'classificacao' => $this->faker->randomFloat(2,100,15000),
+            'descricao' => $this->faker->paragraph(4),
+            'classificacao' => $this->faker->randomFloat(2,0,5),
         ];
     }
 }

@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('encomendas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('loja_id')
+                  ->constrained()
+                  ->cascadeOnDelete();
             $table->text('descricao');
             $table->float('total')->default(0);
             $table->boolean('status')->default(false);

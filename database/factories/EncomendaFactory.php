@@ -17,7 +17,9 @@ class EncomendaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'descricao' => $this->faker->paragraph(4),
+            'total' => $this->faker->randomFloat(2,100,15000),
+            'status' => $this->faker->boolean(),
         ];
     }
 }

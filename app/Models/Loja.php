@@ -19,4 +19,9 @@ class Loja extends Model
     {
         return $this->hasMany(Produto::class); //uma loja pode ter vários produtos
     }
+
+    public function encomendas()
+    {
+        return $this->hasMany(Encomenda::class); //uma loja pode ter várias encomendas
+    }
 }

@@ -18,30 +18,22 @@ class ProdutoController extends Controller
         try {
             return response()->json(Produto::findOrFail($id));    
         } catch(\Exception $error) {
-            $responseError = [
-                'Erro' => "O produto com id:$id não foi encontrado!",
-                'Exception' => $error->getMessage(),
-            ];
-            $statusHttp = 404;
-            return response()->json($responseError,$statusHttp);
+            $message = "O produto com id:$id não foi encontrado!";
+            return $this->errorMessage($error, $message, 404);
         }   
     }
 
     public function store(Request $request) 
     {
         try {
-            $storedProduto = Produto::create($request->all());
+            $storedProduto = Produto::create($request->post());
             return response()->json([
                 'msg' => "Produto inserido com sucesso!",
                 'produto' => $storedProduto,
             ]);
         } catch(Exception $error) {
-            $responseError = [
-                'Erro' => "Erro ao inserir novo produto!",
-                'Exception' => $error->getMessage(),
-            ];
-            $statusHttp = 404;
-            return response()->json($responseError,$statusHttp);
+            $message = "Erro ao inserir novo produto!";
+            return $this->errorMessage($error, $message, 500, true);
         }
     }
 
@@ -74,5 +66,15 @@ class ProdutoController extends Controller
                 'Exception' => $error->getMessage(),
             ]);
         }
+    }
+
+    private function errorMessage($error, $message, $statusHttp, $trace = false)
+    {
+        $messageError = [
+            'Erro' => $message,
+            'Exception' => $error->getMessage(),
+        ];
+        $trace && $messageError['Trace'] = $error->getTrace();
+        return response($messageError, $statusHttp);
     }
 }

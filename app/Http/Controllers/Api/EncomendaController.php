@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Loja;
+use App\Models\Encomenda;
 
-class LojaController extends Controller
+class EncomendaController extends Controller
 {
-    private $loja;
+    private $encomenda;
 
-    public function __construct(Loja $loja) //Route Model Binding
+    public function __construct(Encomenda $encomenda) //Route Model Binding
     {
-        $this->loja = $loja;
+        $this->encomenda = $encomenda;
     }
- 
     /**
      * Display a listing of the resource.
      *
@@ -22,17 +21,7 @@ class LojaController extends Controller
      */
     public function index()
     {
-        return $this->loja->all();
-    }
-
-    public function produtos(Loja $loja)
-    {
-        return response()->json($loja->load('produtos'));
-    }
-
-    public function encomendas(Loja $loja)
-    {
-        return response()->json($loja->load('encomendas'));
+        return $this->encomenda->all();
     }
 
     /**
@@ -41,16 +30,17 @@ class LojaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(Request $request)
     {
         try {
             return response()->json([
-                'Message' => "Loja inserida com sucesso!",
-                'Loja' => $this->loja->create($request->all()),
+                'Message' => "Encomenda inserida com sucesso!",
+                'Encomenda' => $this->encomenda->create($request->all()),
             ]);
         } catch(\Exception $error) {
             $responseError = [
-                'Erro' => "Erro ao inserir nova loja!",
+                'Erro' => "Erro ao inserir nova encomenda!",
                 'Exception' => $error->getMessage(),
             ];
             $statusHttp = 404;
@@ -64,9 +54,9 @@ class LojaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Loja $loja)
+    public function show(Encomenda $encomenda)
     {
-        return $loja;
+        return $encomenda;
     }
 
     /**
@@ -76,17 +66,17 @@ class LojaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Loja $loja)
+    public function update(Request $request, Encomenda $encomenda)
     {
         try {
-            $loja->update($request->all());
+            $encomenda->update($request->all());
             return response()->json([
-                'Message' => "Loja atualizada com sucesso!",
-                'Loja' => $loja,
+                'Message' => "Encomenda atualizada com sucesso!",
+                'Encomenda' => $encomenda,
             ]);
         } catch(Exception $error) {
             return response()->json([
-                'Erro' => "Erro ao atualizar loja!",
+                'Erro' => "Erro ao atualizar encomenda!",
                 'Exception' => $error->getMessage(),
             ], 404);
         }
@@ -98,17 +88,17 @@ class LojaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Loja $loja)
+    public function destroy(Encomenda $encomenda)
     {
         try {
-            if($loja->delete())
+            if($encomenda->delete())
                 return response()->json([
-                    'Message' => "Loja removida",
-                    'Loja' => $loja,
+                    'Message' => "Encomenda removida",
+                    'Encomenda' => $encomenda,
                 ]);
         } catch(Exception $error) {
             return response()->json([
-                'Erro' => "Erro ao excluir loja!",
+                'Erro' => "Erro ao excluir encomenda!",
                 'Exception' => $error->getMessage(),
             ],404);
         }

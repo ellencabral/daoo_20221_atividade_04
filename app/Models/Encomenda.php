@@ -11,6 +11,13 @@ class Encomenda extends Model
 
     protected $fillable = [
         'descricao',
-        'status'
+        'total',
+        'status',
+        'loja_id',
     ];
+
+    public function lojas()
+    {
+        return $this->belongsTo(Loja::class); //uma encomenda pode pertencer a uma loja
+    }
 }
