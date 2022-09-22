@@ -18,11 +18,11 @@ class DatabaseSeeder extends Seeder
         
         \App\Models\Loja::factory(5)->hasEncomendas(10)->create();
 
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(5)->create();
 
-        \App\Models\User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     }
 }
