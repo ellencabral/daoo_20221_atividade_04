@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Loja;
 
+use Exception;
+
 class LojaController extends Controller
 {
     private $loja;
@@ -43,7 +45,13 @@ class LojaController extends Controller
      */
     public function store(Request $request)
     {
+        $statusHttp = 500;
         try {
+            if(!$request->user()->tokenCan('is-admin'))
+            {
+                $statusHttp = 403;//FORBIDDEN - Sem permissão
+                throw new Exception('Você não tem permissão de admin!');
+            }
             return response()->json([
                 'Message' => "Loja inserida com sucesso!",
                 'Loja' => $this->loja->create($request->all()),

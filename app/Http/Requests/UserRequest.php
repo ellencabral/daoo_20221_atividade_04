@@ -27,6 +27,7 @@ class UserRequest extends FormRequest
             'name'     => 'required | string | max:50',
             'email'    => 'required | email | unique:users',
             'password' => 'required | min:8',
+            'is_admin' => 'nullable | boolean',
         ];
     }
 
@@ -40,6 +41,7 @@ class UserRequest extends FormRequest
             'email.unique'      => 'Este email já está cadastrado!',
             'password.min'      => 'A senha deve ter no mínimo 8 caracteres!',
             'password.required' => 'A senha é obrigatória!',
+            'is_admin.boolean'  => 'O campo is_admin deverá ser 0 ou 1!',
         ];
     }
 }

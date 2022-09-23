@@ -10,9 +10,14 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\LoginController;
 
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::middleware('auth:sanctum')->get(
+    '/user', 
+    function (Request $request) {
+        $user = $request->user();
+        //return auth()->user()->currentAccessToken();
+        return ['isAdmin' => $user->tokenCan('is-admin')];
+    }
+);
 
 Route::get('/produtos',[ProdutoController::class,'index']);
 
@@ -27,6 +32,10 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::apiResource('lojas', LojaController::class)
         ->parameters(['lojas' => 'loja']);
+
+    //ability
+    Route::put('lojas/{loja}',[LojaController::class,'update'])
+    ->middleware('ability:is-admin');
 
     Route::apiResource('encomendas',EncomendaController::class);
 

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->text('nome');
             $table->text('descricao');
-            $table->float('classificacao');
+            $table->float('classificacao')->default(0);
             $table->timestamps();
         });
     }

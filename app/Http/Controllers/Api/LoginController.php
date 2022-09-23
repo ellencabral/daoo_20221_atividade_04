@@ -18,9 +18,15 @@ class LoginController extends Controller
         try {
             $user = User::where('email', $request->email)->first();
             // where = metodo que monta query | first = metodo que retorna o resultado
+            
             if(!$user || !Hash::check($request->password, $user->password)) // verifica a senha
                 throw new Exception('Senha incorreta!');
-            $response = $user->createToken($request->email)->plainTextToken;
+
+            $ability = $user->is_admin?['is-admin']:[]; 
+            // se for verdadeiro, passa admin para ability, caso contrário passa um array vazio
+
+            $response = $user->createToken($request->email,$ability)->plainTextToken;
+            
             return response()->json(['token' => $response]);
         } catch(Exception $error) {
             return response()->json([
