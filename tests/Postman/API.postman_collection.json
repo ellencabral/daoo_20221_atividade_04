@@ -17,6 +17,16 @@
 						}
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|fJNvZcEHI0UIjsJKeMo89DTusnkCF7C045FdFonz",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -26,7 +36,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/api/encomendas/2",
+							"raw": "http://localhost:8000/api/encomendas/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -35,7 +45,7 @@
 							"path": [
 								"api",
 								"encomendas",
-								"2"
+								""
 							]
 						}
 					},
@@ -49,6 +59,16 @@
 						}
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|fJNvZcEHI0UIjsJKeMo89DTusnkCF7C045FdFonz",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -61,18 +81,23 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "nome",
-									"value": "Loja teste",
+									"key": "loja_id",
+									"value": "6",
 									"type": "text"
 								},
 								{
 									"key": "descricao",
-									"value": "descricao da loja teste",
+									"value": "descricao teste da encomenda",
 									"type": "text"
 								},
 								{
-									"key": "classificacao",
-									"value": "0",
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "total",
+									"value": "1200",
 									"type": "text"
 								}
 							]
@@ -100,6 +125,16 @@
 						}
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|fJNvZcEHI0UIjsJKeMo89DTusnkCF7C045FdFonz",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -112,23 +147,18 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "loja_id",
-									"value": "",
-									"type": "text"
-								},
-								{
 									"key": "descricao",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "total",
-									"value": "",
+									"value": "Teste edição de encomenda",
 									"type": "text"
 								},
 								{
 									"key": "status",
-									"value": "",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "total",
+									"value": "12321",
 									"type": "text"
 								}
 							]
@@ -157,6 +187,16 @@
 						}
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|fJNvZcEHI0UIjsJKeMo89DTusnkCF7C045FdFonz",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [
 							{
@@ -188,9 +228,21 @@
 			"item": [
 				{
 					"name": "SHOW",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|fJNvZcEHI0UIjsJKeMo89DTusnkCF7C045FdFonz",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [
@@ -201,7 +253,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/api/lojas",
+							"raw": "http://localhost:8000/api/lojas/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -209,7 +261,8 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"lojas"
+								"lojas",
+								""
 							]
 						}
 					},
@@ -228,7 +281,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "3|auOs2kmJf6hKoAgdbxYeZ3DwTF6sef7u15NG4ggQ",
+									"value": "2|fJNvZcEHI0UIjsJKeMo89DTusnkCF7C045FdFonz",
 									"type": "string"
 								}
 							]
@@ -289,7 +342,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "3|auOs2kmJf6hKoAgdbxYeZ3DwTF6sef7u15NG4ggQ",
+									"value": "2|fJNvZcEHI0UIjsJKeMo89DTusnkCF7C045FdFonz",
 									"type": "string"
 								}
 							]
@@ -307,17 +360,17 @@
 							"urlencoded": [
 								{
 									"key": "nome",
-									"value": "loja teste",
+									"value": "Loja teste",
 									"type": "text"
 								},
 								{
 									"key": "descricao",
-									"value": "testeando descrição",
+									"value": "Testando update",
 									"type": "text"
 								},
 								{
 									"key": "classificacao",
-									"value": "2",
+									"value": "",
 									"type": "text"
 								}
 							]
@@ -339,7 +392,7 @@
 					"response": []
 				},
 				{
-					"name": "DELETE",
+					"name": "REMOVE",
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {
 							"accept": true
@@ -388,6 +441,16 @@
 						}
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|fJNvZcEHI0UIjsJKeMo89DTusnkCF7C045FdFonz",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -421,6 +484,16 @@
 						}
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|fJNvZcEHI0UIjsJKeMo89DTusnkCF7C045FdFonz",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -464,7 +537,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/produtos",
+							"raw": "http://localhost:8000/api/produtos/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -472,7 +545,8 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"produtos"
+								"produtos",
+								""
 							]
 						}
 					},
@@ -486,6 +560,16 @@
 						}
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|UF9lFOdJ9iWisQfUMtfljqTUPgIxAXM35kxHKIVR",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -592,7 +676,7 @@
 					"response": []
 				},
 				{
-					"name": "DELETE",
+					"name": "REMOVE",
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {
 							"accept": true
@@ -723,7 +807,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "1|Qhae78Zq75lY4UZGaMo5XrOE1MzFNv5OiQUwS7T2",
+									"value": "1|4a1mbJSO4crqoKFIqQkDqKyXD4fkfSzzBwcCfvEp",
 									"type": "string"
 								}
 							]
@@ -746,17 +830,17 @@
 								},
 								{
 									"key": "email",
-									"value": "easte@sad",
+									"value": "ellen@teste.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "asdasdasd",
+									"value": "password",
 									"type": "text"
 								},
 								{
 									"key": "is_admin",
-									"value": "",
+									"value": "1",
 									"type": "text"
 								}
 							]
@@ -800,7 +884,7 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "jordan47@example.net",
+									"value": "ellen@teste.com",
 									"type": "text"
 								},
 								{
