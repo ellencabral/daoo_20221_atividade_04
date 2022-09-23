@@ -223,6 +223,16 @@
 						}
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|auOs2kmJf6hKoAgdbxYeZ3DwTF6sef7u15NG4ggQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -246,7 +256,7 @@
 								},
 								{
 									"key": "classificacao",
-									"value": "0",
+									"value": "",
 									"type": "text"
 								}
 							]
@@ -274,6 +284,16 @@
 						}
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|auOs2kmJf6hKoAgdbxYeZ3DwTF6sef7u15NG4ggQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -283,21 +303,21 @@
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
+							"mode": "urlencoded",
+							"urlencoded": [
 								{
 									"key": "nome",
-									"value": "",
+									"value": "loja teste",
 									"type": "text"
 								},
 								{
 									"key": "descricao",
-									"value": "",
+									"value": "testeando descrição",
 									"type": "text"
 								},
 								{
 									"key": "classificacao",
-									"value": "",
+									"value": "2",
 									"type": "text"
 								}
 							]
@@ -326,6 +346,16 @@
 						}
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|auOs2kmJf6hKoAgdbxYeZ3DwTF6sef7u15NG4ggQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [
 							{
@@ -335,7 +365,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/api/lojas/3",
+							"raw": "http://localhost:8000/api/lojas/11",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -344,7 +374,7 @@
 							"path": [
 								"api",
 								"lojas",
-								"3"
+								"11"
 							]
 						}
 					},
@@ -599,7 +629,7 @@
 			"name": "Users",
 			"item": [
 				{
-					"name": "SHOW",
+					"name": "TOKENS",
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {
 							"accept": true
@@ -611,7 +641,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "4|2XYVBYunRhvv0pzfTS5kBwW4qyuEgnnRrNhpPWqf",
+									"value": "3|auOs2kmJf6hKoAgdbxYeZ3DwTF6sef7u15NG4ggQ",
 									"type": "string"
 								}
 							]
@@ -625,7 +655,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/api/users/11",
+							"raw": "http://localhost:8000/api/user",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -633,8 +663,48 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"users",
-								"11"
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SHOW",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|Qhae78Zq75lY4UZGaMo5XrOE1MzFNv5OiQUwS7T2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users"
 							]
 						}
 					},
@@ -648,6 +718,16 @@
 						}
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|Qhae78Zq75lY4UZGaMo5XrOE1MzFNv5OiQUwS7T2",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -672,6 +752,11 @@
 								{
 									"key": "password",
 									"value": "asdasdasd",
+									"type": "text"
+								},
+								{
+									"key": "is_admin",
+									"value": "",
 									"type": "text"
 								}
 							]
@@ -715,12 +800,12 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "ellen@teste.com",
+									"value": "jordan47@example.net",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "teste12345678",
+									"value": "password",
 									"type": "text"
 								}
 							]
